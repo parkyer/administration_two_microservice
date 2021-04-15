@@ -62,6 +62,7 @@ public class Parking {
         this.id_owner = id_owner;
     }
 
+
     public String getId_client() {
         return this.id_client;
     }
