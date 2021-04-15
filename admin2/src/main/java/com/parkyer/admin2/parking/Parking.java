@@ -23,7 +23,7 @@ public class Parking {
 
     private int id;
     private int id_owner;
-    private Integer id_client;
+    private String id_client;
     private String location;
     private String type;
 
@@ -31,14 +31,14 @@ public class Parking {
     public Parking() {
     }
 
-    public Parking(int id_owner, Integer id_client, String location, String type) {
+    public Parking(int id_owner, String id_client, String location, String type) {
         this.id_owner = id_owner;
         this.id_client = id_client;
         this.location = location;
         this.type = type;
     }
 
-    public Parking(int id, int id_owner, Integer id_client, String location, String type) {
+    public Parking(int id, int id_owner, String id_client, String location, String type) {
         this.id = id;
         this.id_owner = id_owner;
         this.id_client = id_client;
@@ -62,11 +62,11 @@ public class Parking {
         this.id_owner = id_owner;
     }
 
-    public Integer getId_client() {
+    public String getId_client() {
         return this.id_client;
     }
 
-    public void setId_client(Integer id_client) {
+    public void setId_client(String id_client) {
         this.id_client = id_client;
     }
 

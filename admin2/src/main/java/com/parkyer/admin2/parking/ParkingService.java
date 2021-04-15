@@ -21,17 +21,17 @@ public class ParkingService {
         return parkingRepository.findAll();
     }
 
-    public List<Parking> getParkingsUsedBy(Integer id_client){
+    public List<Parking> getParkingsUsedBy(String id_client){
         List<Parking> parkingsused = new ArrayList<>();
         for(Parking parking : parkingRepository.findAll()){
-            if(parking.getId_client() == id_client){
+            if(parking.getId_client().equals(id_client)){
                 parkingsused.add(parking);
             }
         }
         return parkingsused;
     }
 
-    public void createSuscription(int id, Integer id_client) {
+    public void createSuscription(int id, String id_client) {
         Optional<Parking> OptionalParking = parkingRepository.findById(id);   
         Parking parking = OptionalParking.get();
 

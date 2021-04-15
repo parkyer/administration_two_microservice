@@ -27,7 +27,7 @@ public class ParkingController {
     }
 
     @GetMapping( value = { "/parkingsusedby/{id}" } )
-    public List<Parking> getParkingsUsedBy(@PathVariable (value = "id") Integer id_client){
+    public List<Parking> getParkingsUsedBy(@PathVariable (value = "id") String id_client){
         return parkingService.getParkingsUsedBy(id_client);
     }
 
