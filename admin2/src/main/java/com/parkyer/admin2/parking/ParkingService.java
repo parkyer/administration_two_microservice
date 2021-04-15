@@ -43,14 +43,14 @@ public class ParkingService {
         Optional<Parking> OptionalParking = parkingRepository.findById(id);   
         Parking parking = OptionalParking.get();
 
-        parking.setId_client(null); 
+        parking.setId_client("null"); 
         parkingRepository.save(parking);     
     }
 
     public List<Parking> getAvailableParkings(){
         List<Parking> availables = new ArrayList<>();
         for(Parking parking : parkingRepository.findAll()){
-            if(parking.getId_client() == null){
+            if(parking.getId_client().equals("null")){
                 availables.add(parking);
             }
         }
