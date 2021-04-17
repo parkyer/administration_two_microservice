@@ -31,20 +31,24 @@ public class ParkingService {
         return parkingsused;
     }
 
-    public void createSuscription(int id, String id_client) {
+    public Optional<Parking> createSuscription(int id, String id_client) {
         Optional<Parking> OptionalParking = parkingRepository.findById(id);   
         Parking parking = OptionalParking.get();
 
         parking.setId_client(id_client); 
-        parkingRepository.save(parking);     
+        parkingRepository.save(parking); 
+
+        return parkingRepository.findById(id);
     }
 
-    public void deleteSuscription(int id) {
+    public Optional<Parking> deleteSuscription(int id) {
         Optional<Parking> OptionalParking = parkingRepository.findById(id);   
         Parking parking = OptionalParking.get();
 
         parking.setId_client("null"); 
-        parkingRepository.save(parking);     
+        parkingRepository.save(parking);
+        
+        return parkingRepository.findById(id);
     }
 
     public List<Parking> getAvailableParkings(){

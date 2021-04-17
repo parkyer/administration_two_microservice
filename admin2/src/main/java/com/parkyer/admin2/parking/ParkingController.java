@@ -1,6 +1,7 @@
 package com.parkyer.admin2.parking;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,13 +33,16 @@ public class ParkingController {
     }
 
     @PutMapping( value = { "/newsuscription/{id}" } )
-    public void newSuscription(@PathVariable (value = "id") int id, @RequestBody Parking parking){
-        parkingService.createSuscription(id, parking.getId_client());
+        public Optional<Parking> newSuscription(@PathVariable (value = "id") int id, @RequestBody Parking parking){
+        Optional<Parking> p = parkingService.createSuscription(id, parking.getId_client());
+        return p;
     }
 
     @PutMapping( value = { "/deletesuscription/{id}" } )
-    public void deleteSuscription(@PathVariable (value = "id") int id){
-        parkingService.deleteSuscription(id);
+        public Optional<Parking> deleteSuscription(@PathVariable (value = "id") int id){
+        Optional<Parking> p = parkingService.deleteSuscription(id);
+
+        return p;
     }
 
     @GetMapping( value = { "/availableparkings" } )
