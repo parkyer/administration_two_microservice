@@ -24,24 +24,30 @@ public class Parking {
     private int id;
     private int id_owner;
     private String id_client;
+    private String latitude;
+    private String longitude;
     private String location;
     private String type;
 
 
-    public Parking() {
+    public Parking() {        
     }
 
-    public Parking(int id_owner, String id_client, String location, String type) {
+    public Parking(int id_owner, String id_client, String latitude, String longitude, String location, String type) {
         this.id_owner = id_owner;
         this.id_client = id_client;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.location = location;
         this.type = type;
     }
 
-    public Parking(int id, int id_owner, String id_client, String location, String type) {
+    public Parking(int id, int id_owner, String id_client, String latitude, String longitude, String location, String type) {
         this.id = id;
         this.id_owner = id_owner;
         this.id_client = id_client;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.location = location;
         this.type = type;
     }
@@ -71,6 +77,22 @@ public class Parking {
         this.id_client = id_client;
     }
 
+    public String getLatitude() {
+        return this.latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return this.longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
     public String getLocation() {
         return this.location;
     }
@@ -93,6 +115,8 @@ public class Parking {
             " id='" + getId() + "'" +
             " id_owner='" + getId_owner() + "'" +
             ", id_client='" + getId_client() + "'" +
+            ", latitude='" + getLatitude() + "'" +
+            ", longitude='" + getLongitude() + "'" +
             ", location='" + getLocation() + "'" +
             ", type='" + getType() + "'" +
             "}";

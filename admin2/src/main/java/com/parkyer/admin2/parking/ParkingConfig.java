@@ -13,25 +13,33 @@ public class ParkingConfig {
         return args -> {
             Parking p1 = new Parking(
                 1,
-                "null", 
+                "null",
+                "4.740596106774402",
+                "-74.03132287148797", 
                 "calle 141bis #16a - 39",
                 "carro"
             );
             Parking p2 = new Parking(
                 4,
                 "null", 
+                "4.740596106774402",
+                "-74.03132287148797", 
                 "calle 141bis #15 - 45",
                 "carro"
             );
             Parking p3 = new Parking(
                 6,
                 "null", 
+                "4.740596106774402",
+                "-74.03132287148797", 
                 "calle 141bis #15 - 45",
                 "carro"
             );
             Parking p4 = new Parking(
                 9,
                 "null", 
+                "4.740596106774402",
+                "-74.03132287148797", 
                 "calle 50 #20 - 45",
                 "moto"
             );
